@@ -1,0 +1,72 @@
+request_text,risk_label
+"Need read-only access to the marketing shared drive to review campaign assets",low
+"Requesting view access to the HR holiday calendar",low
+"Please grant me access to the office printer on the 3rd floor",low
+"Need to view the internal company newsletter archive",low
+"Requesting access to view the public knowledge base articles",low
+"I need read access to the team wiki for onboarding",low
+"Please add me to the general announcements distribution list",low
+"Requesting view access to the employee training materials portal",low
+"Please give me access to the public company blog for reading articles",low
+"Need to subscribe to the weekly team newsletter",low
+"Requesting access to view upcoming public holidays calendar",low
+"Please grant view-only access to the project status dashboard",low
+"Need access to download the employee handbook PDF",low
+"Requesting access to view the company's public press releases",low
+"Please give me read access to the FAQ page for new joiners",low
+"Need view access to the shared meeting notes folder",low
+"Requesting access to view my own performance review document",low
+"Please grant access to the internal directory to look up colleague contact details",low
+"Need read-only access to the sprint retrospective notes",low
+"Requesting access to book a seat in the shared coworking space",low
+"Please give me access to view the cafeteria weekly menu",low
+"Requesting VPN access for remote work from home",medium
+"Need access to the shared project folder for the new client onboarding",medium
+"Please grant me write access to the QA test case repository",medium
+"Requesting access to the staging environment for testing new features",medium
+"I need edit access to the sprint planning board in Jira",medium
+"Please provide access to the internal ticketing system to raise change requests",medium
+"Requesting access to the automation testing framework repository",medium
+"Need access to the CI/CD pipeline dashboard to monitor builds",medium
+"Please grant access to the shared calendar for scheduling client meetings",medium
+"Requesting access to the developer sandbox environment",medium
+"Need edit rights on the API documentation confluence page",medium
+"Requesting write access to the shared team task tracker for daily updates",medium
+"Please grant access to upload files to the shared client deliverables folder",medium
+"Need access to the internal chat tool to join the project channel",medium
+"Requesting access to the test automation reporting dashboard",medium
+"Please provide edit access to the release notes document",medium
+"Need access to the bug tracking system to log and update defects",medium
+"Requesting access to the internal survey tool to create employee polls",medium
+"Please grant access to the shared design assets folder for the new UI",medium
+"Need edit access to update the onboarding checklist for new hires",medium
+"Requesting access to the internal code review tool",medium
+"Please grant access to schedule and manage team meeting rooms",medium
+"Need access to the shared analytics dashboard for read and comment",medium
+"Requesting access to the internal learning management system to enroll in courses",medium
+"Please provide access to submit and track IT support tickets",medium
+"Need access to the test data generation tool for QA scripts",medium
+"Requesting access to modify the team's shared project timeline",medium
+"Requesting access to submit expense reports in the finance portal",medium
+"Please grant me admin access to the production database server",high
+"I need root access to the Linux servers hosting the payment gateway",high
+"Requesting admin rights on the domain controller for Active Directory management",high
+"Please grant me access to the SailPoint IdentityIQ admin console",high
+"Need superuser access to modify firewall rules on the network",high
+"Requesting privileged access to the finance system to process payroll",high
+"Please provide access to customer credit card and payment data",high
+"Need administrator access to the HR system containing employee SSNs",high
+"Requesting elevated access to modify user roles in the IAM platform",high
+"Please grant me access to delete records in the production customer database",high
+"I need access to the encryption key management vault",high
+"Requesting access to override approval workflows in the IAM governance tool",high
+"Need admin credentials for the cloud infrastructure AWS root account",high
+"Please grant access to view salary and compensation details for all employees",high
+"Requesting access to modify security group policies on the corporate network",high
+"Need access to the source code repository for the core banking application with commit rights",high
+"Need access to reset other users' passwords in Active Directory",high
+"Please grant me access to bypass multi-factor authentication for testing",high
+"Requesting access to disable audit logging on the security monitoring tool",high
+"Need access to export the full customer database to a local file",high
+"Please grant me access to the source code for authentication and login services",high
+"Requesting access to approve my own access requests in the IAM workflow",high

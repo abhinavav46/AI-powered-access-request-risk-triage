@@ -1,0 +1,51 @@
+{% extends "triage/base.html" %}
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <h1>Access Requests Dashboard</h1>
+</section>
+
+<div class="stats-row">
+    <div class="stat-box"><span class="stat-num">{{ counts.total }}</span><span>Total</span></div>
+    <div class="stat-box stat-high"><span class="stat-num">{{ counts.high }}</span><span>High Risk</span></div>
+    <div class="stat-box stat-medium"><span class="stat-num">{{ counts.medium }}</span><span>Medium Risk</span></div>
+    <div class="stat-box stat-low"><span class="stat-num">{{ counts.low }}</span><span>Low Risk</span></div>
+    <div class="stat-box"><span class="stat-num">{{ counts.pending }}</span><span>Pending</span></div>
+</div>
+
+<div class="filters">
+    <a href="{% url 'triage:dashboard' %}" class="filter-chip {% if not risk_filter and not status_filter %}active{% endif %}">All</a>
+    <a href="?risk=high" class="filter-chip {% if risk_filter == 'high' %}active{% endif %}">High Risk</a>
+    <a href="?risk=medium" class="filter-chip {% if risk_filter == 'medium' %}active{% endif %}">Medium Risk</a>
+    <a href="?risk=low" class="filter-chip {% if risk_filter == 'low' %}active{% endif %}">Low Risk</a>
+    <a href="?status=pending" class="filter-chip {% if status_filter == 'pending' %}active{% endif %}">Pending</a>
+</div>
+
+<div class="card table-card">
+    <table>
+        <thead>
+            <tr>
+                <th>#</th><th>Requester</th><th>Department</th><th>Request</th>
+                <th>Risk</th><th>Approver</th><th>Status</th><th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for r in requests %}
+            <tr>
+                <td>{{ r.pk }}</td>
+                <td>{{ r.requester_name }}</td>
+                <td>{{ r.department }}</td>
+                <td class="truncate">{{ r.request_text|truncatechars:60 }}</td>
+                <td><span class="badge badge-{{ r.risk_level }}">{{ r.risk_level|upper }}</span></td>
+                <td>{{ r.recommended_approver }}</td>
+                <td><span class="status status-{{ r.status }}">{{ r.status|title }}</span></td>
+                <td><a href="{% url 'triage:request_detail' r.pk %}" class="btn-link">View</a></td>
+            </tr>
+            {% empty %}
+            <tr><td colspan="8" class="muted">No requests yet. <a href="{% url 'triage:submit_request' %}">Submit one</a>.</td></tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

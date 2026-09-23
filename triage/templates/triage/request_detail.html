@@ -1,0 +1,40 @@
+{% extends "triage/base.html" %}
+{% block title %}Request #{{ req.pk }}{% endblock %}
+
+{% block content %}
+<div class="card detail-card">
+    <div class="detail-header">
+        <h2>Request #{{ req.pk }}</h2>
+        <span class="badge badge-{{ req.risk_level }}">{{ req.risk_level|upper }} RISK</span>
+    </div>
+
+    <p><b>Requester:</b> {{ req.requester_name }} ({{ req.department }})</p>
+    <p><b>Submitted:</b> {{ req.submitted_at|date:"d M Y, H:i" }}</p>
+    <p><b>Status:</b> <span class="status status-{{ req.status }}">{{ req.status|title }}</span></p>
+
+    <hr>
+    <p><b>Request text:</b></p>
+    <p class="request-text">{{ req.request_text }}</p>
+
+    <hr>
+    <h3>AI Assessment</h3>
+    <p><b>Risk level:</b> {{ req.risk_level|title }}</p>
+    <p><b>Model confidence:</b> {{ req.risk_confidence|floatformat:2 }}</p>
+    <p><b>Decision source:</b>
+        {% if req.risk_source == "rule_override" %}
+            Rule-based safety net (matched keyword: <code>{{ req.matched_keyword }}</code>)
+        {% else %}
+            Machine learning model (TF-IDF + Logistic Regression)
+        {% endif %}
+    </p>
+    <p><b>Recommended approval path:</b> {{ req.recommended_approver }}</p>
+
+    <hr>
+    <form method="post" action="{% url 'triage:update_status' req.pk %}" class="status-form">
+        {% csrf_token %}
+        <button type="submit" name="status" value="approved" class="btn-approve">Approve</button>
+        <button type="submit" name="status" value="rejected" class="btn-reject">Reject</button>
+        <a href="{% url 'triage:dashboard' %}" class="btn-secondary">Back to Dashboard</a>
+    </form>
+</div>
+{% endblock %}

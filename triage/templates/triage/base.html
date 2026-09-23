@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}AI Access Risk Triage{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'triage/style.css' %}">
+</head>
+<body>
+    <header class="topbar">
+        <div class="topbar-inner">
+            <a href="{% url 'triage:submit_request' %}" class="brand">🔐 Access Risk Triage</a>
+            <nav>
+                <a href="{% url 'triage:submit_request' %}">New Request</a>
+                <a href="{% url 'triage:dashboard' %}">Dashboard</a>
+                <a href="/admin/">Admin</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        {% if messages %}
+            <div class="messages">
+                {% for message in messages %}
+                    <div class="message message-{{ message.tags }}">{{ message }}</div>
+                {% endfor %}
+            </div>
+        {% endif %}
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="footer">
+        <p>AI-Powered Access Request Risk Triage &middot; Built with Django + scikit-learn</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,47 @@
+{% extends "triage/base.html" %}
+{% load static %}
+{% block title %}New Access Request{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <h1>Request System / Data Access</h1>
+    <p class="subtitle">
+        Describe what you need and why. Our AI risk model reads your request and
+        instantly classifies it as <b>Low</b>, <b>Medium</b>, or <b>High</b> risk,
+        then routes it to the right approver — just like a real IAM access
+        governance workflow.
+    </p>
+</section>
+
+<div class="grid-2">
+    <form method="post" class="card form-card">
+        {% csrf_token %}
+        <div class="field">
+            <label for="{{ form.requester_name.id_for_label }}">Your Name</label>
+            {{ form.requester_name }}
+        </div>
+        <div class="field">
+            <label for="{{ form.department.id_for_label }}">Department</label>
+            {{ form.department }}
+        </div>
+        <div class="field">
+            <label for="{{ form.request_text.id_for_label }}">What access do you need, and why?</label>
+            {{ form.request_text }}
+            {% if form.request_text.errors %}
+                <p class="error">{{ form.request_text.errors|striptags }}</p>
+            {% endif %}
+        </div>
+        <button type="submit" class="btn-primary">Submit Request</button>
+    </form>
+
+    <div class="card preview-card">
+        <h3>Live AI Risk Preview</h3>
+        <p class="muted">Start typing your request above — the AI model scores it in real time before you even submit.</p>
+        <div id="preview-result" class="preview-result">
+            <span class="muted">Waiting for input…</span>
+        </div>
+    </div>
+</div>
+
+<script src="{% static 'triage/script.js' %}"></script>
+{% endblock %}
