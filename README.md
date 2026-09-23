@@ -12,6 +12,20 @@ to an interviewer or put on a resume/portfolio — it combines full-stack web
 development, applied machine learning, and IAM domain concepts in one place.
 
 ---
+**Home page**
+<img width="1913" height="913" alt="Screenshot 2026-09-23 104706" src="https://github.com/user-attachments/assets/85d3c64f-8f78-48dd-822d-94aebfc89066" />
+**Request page**
+<img width="1307" height="818" alt="Screenshot 2026-09-23 104825" src="https://github.com/user-attachments/assets/05653bd0-f77a-4934-bcbf-78613ce4c40b" />
+**Request Info page**
+<img width="1137" height="783" alt="Screenshot 2026-09-23 104842" src="https://github.com/user-attachments/assets/823bf97d-5c4c-438b-8e20-e6fa578448dd" />
+**Access Request dashboard**
+<img width="1247" height="776" alt="Screenshot 2026-09-23 104910" src="https://github.com/user-attachments/assets/d05d8cae-100e-46f4-811e-b60c22d2526e" />
+**Admin**
+<img width="1917" height="712" alt="Screenshot 2026-09-23 104954" src="https://github.com/user-attachments/assets/35e656b1-9c24-4072-a721-6cd22fd718fd" />
+
+
+
+
 
 ## Why this project
 
